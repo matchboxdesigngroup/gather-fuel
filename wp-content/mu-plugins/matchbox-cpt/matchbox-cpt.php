@@ -29,8 +29,19 @@ function matchbox_cpt_register_post_types() {
 	 */
 	$post_types = glob( $dir_path . '*.php' );
 
+  /**
+	 * An array of post types to exclude from registration.
+	 *
+	 * @var array $exclude_post_types
+	 */
+	$exclude_post_types = array( 'post', 'page' ); // Example array of post types to exclude. Change this as needed.
+
 	// Loop through each post type PHP file and include it to register the custom post type.
 	foreach ( $post_types as $post_type ) {
+    $post_type_slug = basename( $post_type, '.php' );
+		if ( in_array( $post_type_slug, $exclude_post_types ) ) {
+			continue; // Skip this post type if it's in the exclude array.
+		}
 		include $post_type;
 	}
 }
