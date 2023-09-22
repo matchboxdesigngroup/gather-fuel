@@ -26,7 +26,7 @@ The steps below should only be followed when creating a new project.
 1. Download the latest release of Gather Fuel and extract its contents into your local project directory.
 1. Configure DDEV.
   1. Open the terminal (or equivalent) at the project root.
-  1. Run `ddev config --database=mysql:8.0 --project-type=wordpress --php-version=8.0` to create the DDEV `config.yml` file.
+  1. Run `ddev config --database=mysql:8.0 --project-type=wordpress --php-version=8.2` to create the DDEV `config.yml` file.
 1. Replace the default Gather Fuel readme by deleting the `readme.md` file. Then rename the `readme-example.md` file to `readme.md`.
 1. Update the project `readme.md` file with your project details.
   1. Replace all instances of `{{ Project Name }}` with the project name.
