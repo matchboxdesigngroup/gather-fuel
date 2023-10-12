@@ -1,0 +1,42 @@
+{
+    "name": "matchboxdesigngroup/gather-fuel",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [{
+        "name": "Matchbox",
+        "homepage": "https://matchboxdesigngroup.com"
+    }],
+    "repositories": [{
+        "type": "composer",
+        "url": "https://wpackagist.org",
+        "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+    }, {
+        "type": "package",
+        "package": {
+            "name": "matchboxdesigngroup/kindling",
+            "version": "3.0.0",
+            "type": "wordpress-theme",
+            "dist": {
+                "url": "https://github.com/matchboxdesigngroup/kindling/archive/refs/tags/3.0.0.zip",
+                "type": "zip"
+            }
+        }
+    }],
+    "require": {
+        "composer/installers": "^2.2",
+        "matchboxdesigngroup/kindling": "*",
+        "wpackagist-plugin/query-monitor": "*"
+    },
+    "extra": {
+        "installer-paths": {
+            "wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+            "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "wp-content/themes/{$name}/": ["matchboxdesigngroup/kindling", "type:wordpress-theme"]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
